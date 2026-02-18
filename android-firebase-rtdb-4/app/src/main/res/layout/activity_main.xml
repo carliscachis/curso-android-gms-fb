@@ -1,49 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
+    android:background="@color/fondoMaiz"
     tools:context="net.sgoliver.android.firebasertdb.MainActivity">
 
-    <Button android:id="@+id/btnEscribirSimple"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/fabCrearPedido"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🌮 Un Pedacito de mi México"
+                android:textColor="@color/terracota"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Menú digital, pedidos en tiempo real y facturación"
+                android:textColor="@color/verdeAguacate"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Vista Cliente"
+                android:textColor="@color/terracota"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnSembrarMenu"
+                style="@style/BotonMexicano"
+                android:text="🍽️ Cargar menú por categorías" />
+
+            <Button
+                android:id="@+id/btnSeguimientoPedido"
+                style="@style/BotonMexicano"
+                android:text="📦 Seguimiento en tiempo real" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Panel Cocina (Admin)"
+                android:textColor="@color/terracota"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnNotificarCocina"
+                style="@style/BotonMexicano"
+                android:text="👨‍🍳 Notificar pedido a cocina" />
+
+            <Button
+                android:id="@+id/btnPagoFactura"
+                style="@style/BotonMexicano"
+                android:text="💵 Pago + Factura vertical" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Configuración"
+                android:textColor="@color/terracota"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnConfigurarNegocio"
+                style="@style/BotonMexicano"
+                android:text="⚙️ Datos fiscales del negocio" />
+
+            <Button
+                android:id="@+id/btnHistorialVentas"
+                style="@style/BotonMexicano"
+                android:text="🧾 Cerrar servicio e historial ventas" />
+
+            <TextView
+                android:id="@+id/txtEstado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/blanco"
+                android:padding="12dp"
+                android:text="Estado: listo para operar"
+                android:textColor="@color/terracota"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabCrearPedido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Escribir dato simple"/>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:contentDescription="Crear pedido"
+        android:src="@android:drawable/ic_input_add"
+        tools:ignore="ImageContrastCheck" />
 
-    <Button android:id="@+id/btnEscribirMap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Escribir Map"/>
-
-    <Button android:id="@+id/btnEscribirList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Escribir List"/>
-
-    <Button android:id="@+id/btnEscribirObjeto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Escribir Objeto Java"/>
-
-    <Button android:id="@+id/btnUpdateChildren"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="actualizaciones simultaneas"/>
-
-    <Button android:id="@+id/btnInsertarPush"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Insertar Push"/>
-
-    <Button android:id="@+id/btnEliminar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Eliminar"/>
-
-</LinearLayout>
+</RelativeLayout>
